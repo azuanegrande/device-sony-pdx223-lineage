@@ -12,8 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit device parts
-$(call inherit-product, device/sony/pdx223/aosp_xqct54.mk)
+# DualSim
+PRODUCT_DEVICE_DS := true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=9,9
+
+TARGET_KERNEL_CONFIG := aosp_nagara_pdx223_defconfig
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/sony/pdx223/device.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+PRODUCT_NAME := aosp_xqct54
+PRODUCT_DEVICE := pdx223
+PRODUCT_MODEL := Xperia 1 IV (AOSP)
+PRODUCT_BRAND := Sony
+PRODUCT_MANUFACTURER := Sony
 
 # Override Product Name
 PRODUCT_NAME := lineage_pdx223
