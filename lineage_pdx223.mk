@@ -15,30 +15,12 @@
 # Inherit device parts
 $(call inherit-product, device/sony/pdx223/aosp_xqct54.mk)
 
+# Override Product Name
+PRODUCT_NAME := lineage_pdx223
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := pdx223
 
 TARGET_SCREEN_HEIGHT := 3840
 TARGET_SCREEN_WIDTH := 1644
 TARGET_BOOT_ANIMATION_RES := 1440
-
-IS_PHONE := true
-
-PRODUCT_BUILD_PROP_OVERRIDES := \
-    DeviceName=XQ-DQ72 \
-    DeviceProduct=XQ-DQ72 \
-    SystemDevice=XQ-DQ72 \
-    SystemName=XQ-DQ72 \
-    BuildFingerprint=Sony/XQ-DQ72/XQ-DQ72:15/67.2.A.2.41/067002A002004100521143226:user/release-keys \
-    BuildDesc="XQ-DQ72-user 15 67.2.A.2.41 067002A002004100521143226 release-keys"
-
-PRODUCT_NAME := lineage_pdx223
-PRODUCT_DEVICE := pdx223
-PRODUCT_MANUFACTURER := Sony
-PRODUCT_BRAND := Sony
-PRODUCT_MODEL := XQ-CT54
-
-PRODUCT_SYSTEM_NAME := XQ-CT54
-PRODUCT_SYSTEM_DEVICE := XQ-CT54
-
-PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
