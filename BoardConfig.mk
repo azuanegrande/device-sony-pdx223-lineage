@@ -15,6 +15,8 @@
 # Platform
 PRODUCT_PLATFORM := nagara
 
+DEVICE_PATH := device/sony/pdx223
+
 include device/sony/nagara/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := unknown
